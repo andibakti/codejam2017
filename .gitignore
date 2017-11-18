@@ -1,6 +1,10 @@
 datasets/Transportation/*
-!datasets/Transportation/.gitkeep
+!datasets/Transportation/NYC\ General\ Transport
+datasets/Transportation/NYC\ General\ Transport/*
+!datasets/Transportation/NYC\ General\ Transport/vehicle-collisions-abridged.csv
 datasets/Sports/*
 !datasets/Sports/.gitkeep
 datasets/Economics/*
 !datasets/Economics/.gitkeep
+
+.idea/
