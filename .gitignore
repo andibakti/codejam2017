@@ -2,3 +2,5 @@ datasets/Transportation/*
 !datasets/Transportation/.gitkeep
 datasets/Sports/*
 !datasets/Sports/.gitkeep
+datasets/Economics/*
+!datasets/Economics/.gitkeep
