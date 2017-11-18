@@ -1,9 +1,17 @@
 datasets/Transportation/*
-!datasets/Transportation/.gitkeep
+!datasets/Transportation/NYC\ General\ Transport
+datasets/Transportation/NYC\ General\ Transport/*
+!datasets/Transportation/NYC\ General\ Transport/vehicle-collisions-abridged.csv
 datasets/Sports/*
 !datasets/Sports/.gitkeep
 datasets/Economics/*
 !datasets/Economics/.gitkeep
+<<<<<<< HEAD
 roaddata/input/*
 
 
+||||||| merged common ancestors
+=======
+
+.idea/
+>>>>>>> 81252062a304b4ee4c3a563bd5e1f6862c91aa97
