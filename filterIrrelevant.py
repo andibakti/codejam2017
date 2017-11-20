@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 import datetime
 import json
 
-tags = ['bicycle','highway', 'lanes', 'maxspeed', 'name', 'oneway']
+tags = ['bicycle','highway', 'lanes', 'maxspeed', 'oneway']
 params = ['service', 'footway', 'steps', 'pedestrian', 'path']
 
 
@@ -16,7 +16,7 @@ treeroot = ET.Element("root")
 print('parsing...')
 print(datetime.datetime.now())
 
-tree = ET.parse('roaddata/out-brooklyn.xml')
+tree = ET.parse('roaddata/filtered/out-brooklyn.xml')
 
 print('done parsing!')
 print(datetime.datetime.now())
@@ -25,7 +25,7 @@ root = tree.getroot()
 
 
 
-print('removing invalid inputs and IDs')
+print('(XML) removing invalid inputs and IDs')
 for road in root.findall('road'):
 	if(len(road.getchildren()) < 3):
 		root.remove(road)
@@ -48,10 +48,13 @@ for road in root.findall('road'):
     for tag in road:
         if(tag.tag == 'name'):
             key = tag.text
+        elif(tag.tag == 'maxspeed'):
+        	speed = float(tag.text[0:2]) * 1.60934
+        	values[tag.tag] = speed
         else:
             values[tag.tag] = tag.text
     streetDitc[key] = values
-
+     
 
 print(datetime.datetime.now())
 
@@ -70,14 +73,14 @@ for key in list(streetDitc):
     for tag in tags:
         if(tag not in values):
             values[tag] = None
-     
+  
 print('done filtering!')
 json = json.dumps(streetDitc)
-f = open("roaddata/filtered-brooklyn.json", "w")
+f = open("filtered-brooklyn.json", "w")
 f.write(json)
 f.close()
 
-tree.write('test.xml')
+
 
 
 
