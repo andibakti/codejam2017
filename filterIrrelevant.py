@@ -16,7 +16,7 @@ treeroot = ET.Element("root")
 print('parsing...')
 print(datetime.datetime.now())
 
-tree = ET.parse('out-montreal.xml')
+tree = ET.parse('roaddata/out-brooklyn.xml')
 
 print('done parsing!')
 print(datetime.datetime.now())
@@ -71,8 +71,9 @@ for key in list(streetDitc):
         if(tag not in values):
             values[tag] = None
      
+print('done filtering!')
 json = json.dumps(streetDitc)
-f = open("streetDictionary.json", "w")
+f = open("roaddata/filtered-brooklyn.json", "w")
 f.write(json)
 f.close()
 

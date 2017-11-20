@@ -6,7 +6,8 @@ datasets/Sports/*
 !datasets/Sports/.gitkeep
 datasets/Economics/*
 !datasets/Economics/.gitkeep
-roaddata/input/*
+roaddata/filtered/*
+roaddata/scrapped/*
 roaddata/input.zip
 .idea/
 
