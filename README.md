@@ -1,3 +1,3 @@
 # codejam2017
 
-TODO!!!!
+An neural network based tool which evaluates the risk of a street based on previous accidents and the nature of the street.
